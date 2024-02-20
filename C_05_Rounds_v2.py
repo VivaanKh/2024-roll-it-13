@@ -96,7 +96,13 @@ while computer_points < 13 and user_points < 13:
     if computer_points >= 10 and computer_points >= user_points:
         computer_pass = "yes"
 
+    # Don't let the computer roll again if the pass condition
+    # has been met in a previous iteration through the loop.
+    elif computer_pass == "yes":
+        pass
+
     else:
+
         # Roll die for computer and update computer points
         computer_move = roll_die()
         computer_points += computer_move
